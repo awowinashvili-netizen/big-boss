@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f4f2ed" media="(prefers-color-scheme: light)" />
+    <meta name="description" content="Big Boss Rent — car rental. Rent by phone or WhatsApp." />
+
+    <!-- Apply theme before first paint: stored explicit choice wins, else system. -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('bbr-theme');
+          var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var dark = stored === 'dark' || (stored !== 'light' && systemDark);
+          var root = document.documentElement;
+          root.classList.toggle('dark', dark);
+          root.style.colorScheme = dark ? 'dark' : 'light';
+        } catch (e) {}
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Georgian:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Big Boss Rent</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <div style="max-width: 42rem; margin: 10vh auto; padding: 0 1.5rem; font-family: system-ui, sans-serif; line-height: 1.65; color: #16130e;">
+        <p style="font: 600 1.9rem/1.1 'Oswald', 'Arial Narrow', system-ui, sans-serif; text-transform: uppercase; letter-spacing: 0.02em; margin: 0 0 0.75rem;">Big Boss Rent</p>
+        <p style="margin: 0 0 1.25rem;">დაჯავშნა ზარით ან WhatsApp-ით. / Rent by phone or WhatsApp. / Аренда по телефону или в WhatsApp.</p>
+        <p style="margin: 0 0 0.25rem; font-weight: 600;">The fleet / ავტოპარკი / Автопарк</p>
+        <ul style="margin: 0 0 1.25rem; padding-left: 1.2rem;">
+          <li>Sedan — Maserati Ghibli</li>
+          <li>SUV — Mercedes-Benz G-Class</li>
+          <li>Coupe — Chevrolet Corvette</li>
+        </ul>
+        <p style="margin: 0; opacity: 0.75;">
+          Please enable JavaScript to browse the cars and get in touch. /
+          მანქანების სანახავად და დასაკავშირებლად ჩართეთ JavaScript. /
+          Включите JavaScript, чтобы посмотреть машины и связаться с нами.
+        </p>
+      </div>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
